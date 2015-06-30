@@ -30,6 +30,14 @@
 			insertbefore = "AllFiles"
 			_label = "Objective C++ Files"
 			extensions = "*.mm,*.M,*.h"/>
+		<FileFilter id = "Libraries"
+			insertbefore="AllFiles"
+			_label = "Libraries"
+			extensions = "*.lib,*.dll"/>
+		<FileFilter id = "Executables"
+			insertbefore="AllFiles"
+			_label = "Executables"
+			extensions = "*.exe"/>
 	</Extension>
 
 	<Extension path = "/MonoDevelop/Ide/FileTemplates">
@@ -90,6 +98,10 @@
 		    extensions = ".c,.h"
 		    blockCommentStartTag = "/*"
 		    blockCommentEndTag = "*/" />
+		<LanguageBinding
+			id = "C++"
+			supportedextensions = ".cpp,.cxx,.cc,.h,.hpp,.hh,.hxx"
+				class = "CBinding.CppLanguageBinding"/>
 		<LanguageBinding
 			id = "CPP"
 			extensions = ".cpp,.cxx,.cc,.h,.hpp,.hh,.hxx"
@@ -233,5 +245,13 @@
 	
 	<Extension path = "/MonoDevelop/Ide/CompletionCharacters">
 		<Complete language="C/C++" commitOnSpace="True" commitChars="{}[]().,:;+-*/%&amp;|^!~=&lt;&gt;?@#'&quot;\"/>
+	</Extension>
+
+	<Extension path = "/MonoDevelop/ProjectModel/MSBuildItemTypes">
+		<DotNetProject
+			language="C++"
+			extension="vcxproj"
+			guid="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}"
+			import="$(MSBuildBinPath)\Microsoft.Cpp.targets"/>
 	</Extension>
 </ExtensionModel>
